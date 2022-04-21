@@ -1,15 +1,26 @@
-import { useState } from 'react'
-import logo from './logo.svg'
-import './App.css'
+import { useState } from 'react';
+import logo from './logo.svg';
+import './App.css';
+
+function Child() {
+  const [count, setCount] = useState(2);
+  return (
+    <div>
+      <h1 onClick={() => setCount((count) => count + 1)}>{count}</h1>
+    </div>
+  );
+}
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  debugger;
+  const [count, setCount] = useState(0);
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>Hello Vite + React!</p>
+        <input placeholder="请输入" />
+        <Child />
         <p>
           <button type="button" onClick={() => setCount((count) => count + 1)}>
             count is: {count}
@@ -39,7 +50,7 @@ function App() {
         </p>
       </header>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
